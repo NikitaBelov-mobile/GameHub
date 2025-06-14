@@ -16,4 +16,13 @@ interface RawgApi {
         @Query("ordering") ordering: String = "-released",
         @Query("key") apiKey: String
     ): Response<GamesResponse>
+
+    /**
+     * Fetches the list of top rated games ordered by rating.
+     */
+    @GET("games")
+    suspend fun getTopRated(
+        @Query("ordering") ordering: String = "-rating",
+        @Query("key") apiKey: String
+    ): Response<GamesResponse>
 }
