@@ -13,4 +13,5 @@ data class GameDto(
     @SerialName("background_image")
     val backgroundImage: String? = null,
     val rating: Double? = null,
+    val released: String? = null,
 )
