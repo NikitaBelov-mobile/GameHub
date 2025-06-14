@@ -14,7 +14,9 @@ interface RawgApi {
     @GET("games")
     suspend fun getNewReleases(
         @Query("ordering") ordering: String = "-released",
-        @Query("key") apiKey: String
+        @Query("page") page: Int,
+        @Query("page_size") pageSize: Int = 20,
+        @Query("key") apiKey: String,
     ): Response<GamesResponse>
 
     /**
@@ -23,6 +25,8 @@ interface RawgApi {
     @GET("games")
     suspend fun getTopRated(
         @Query("ordering") ordering: String = "-rating",
-        @Query("key") apiKey: String
+        @Query("page") page: Int,
+        @Query("page_size") pageSize: Int = 20,
+        @Query("key") apiKey: String,
     ): Response<GamesResponse>
 }

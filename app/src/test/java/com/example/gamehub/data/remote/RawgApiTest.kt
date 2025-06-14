@@ -40,9 +40,9 @@ class RawgApiTest {
         server.enqueue(MockResponse().setResponseCode(200).setBody(mockJson))
 
         runBlocking {
-            val response = api.getNewReleases(apiKey = "test")
+            val response = api.getNewReleases(page = 1, apiKey = "test")
             val request = server.takeRequest()
-            assertEquals("/games?ordering=-released&key=test", request.path)
+            assertEquals("/games?ordering=-released&page=1&page_size=20&key=test", request.path)
             assertEquals(1, server.requestCount)
             assertEquals(200, response.code())
             // Assert that response parsed correctly
@@ -56,9 +56,9 @@ class RawgApiTest {
         server.enqueue(MockResponse().setResponseCode(200).setBody(mockJson))
 
         runBlocking {
-            val response = api.getTopRated(apiKey = "test")
+            val response = api.getTopRated(page = 1, apiKey = "test")
             val request = server.takeRequest()
-            assertEquals("/games?ordering=-rating&key=test", request.path)
+            assertEquals("/games?ordering=-rating&page=1&page_size=20&key=test", request.path)
             assertEquals(1, server.requestCount)
             assertEquals(200, response.code())
             assertEquals(0, response.body()!!.results.size)
