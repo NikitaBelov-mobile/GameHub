@@ -6,6 +6,8 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.map
 import com.example.gamehub.BuildConfig
+import com.example.gamehub.data.NewReleasesRemoteMediator
+import com.example.gamehub.data.TopRatedRemoteMediator
 import com.example.gamehub.data.local.AppDatabase
 import com.example.gamehub.data.local.GameDao
 import com.example.gamehub.data.mapper.toDomain

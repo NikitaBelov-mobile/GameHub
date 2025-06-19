@@ -1,5 +1,6 @@
 package com.example.gamehub
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -13,7 +14,13 @@ import com.example.gamehub.ui.HomeScreen
 import com.example.gamehub.ui.HomeViewModel
 import com.example.gamehub.util.NetworkManager
 
+//class MainActivity : ComponentActivity() {
+//
+//}
+
+
 class MainActivity : ComponentActivity() {
+    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

@@ -14,4 +14,6 @@ class HomeViewModel(
     val isOffline: StateFlow<Boolean> = networkManager.isConnected
         .map { connected -> !connected }
         .stateIn(viewModelScope, SharingStarted.Eagerly, false)
+
+    fun refresh() {}
 }
