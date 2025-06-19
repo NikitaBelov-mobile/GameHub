@@ -12,4 +12,7 @@ interface RemoteKeysDao {
 
     @Query("SELECT * FROM remote_keys WHERE gameId = :id")
     suspend fun remoteKeys(id: Int): RemoteKeysEntity?
+
+    @Query("DELETE FROM remote_keys")
+    suspend fun clearRemoteKeys()
 }

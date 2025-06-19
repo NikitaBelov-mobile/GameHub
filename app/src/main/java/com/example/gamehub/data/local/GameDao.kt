@@ -13,4 +13,10 @@ interface GameDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(games: List<GameEntity>)
+
+    @Query("DELETE FROM games")
+    suspend fun clearAll()
+
+    @Query("DELETE FROM games WHERE lastUpdated < :time")
+    suspend fun deleteOlderThan(time: Long)
 }
