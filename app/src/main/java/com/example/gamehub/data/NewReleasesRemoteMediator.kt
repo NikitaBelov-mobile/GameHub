@@ -7,10 +7,9 @@ import androidx.paging.PagingState
 import com.example.gamehub.data.local.AppDatabase
 import com.example.gamehub.data.local.GameEntity
 import com.example.gamehub.data.local.RemoteKeysEntity
+import com.example.gamehub.data.mapper.toEntity
 import com.example.gamehub.data.remote.RawgApi
-import com.example.gamehub.data.remote.GameDto
 import androidx.room.withTransaction
-import kotlinx.coroutines.delay
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -66,5 +65,3 @@ class NewReleasesRemoteMediator(
     }
 }
 
-private fun GameDto.toEntity(): GameEntity =
-    GameEntity(id, name, backgroundImage, rating, released, System.currentTimeMillis())
