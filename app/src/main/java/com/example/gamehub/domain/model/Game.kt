@@ -1,4 +1,4 @@
-package com.example.gamehub.domain
+package com.example.gamehub.domain.model
 
 data class Game(
     val id: Int,

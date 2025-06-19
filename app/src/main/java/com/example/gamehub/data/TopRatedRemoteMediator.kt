@@ -8,7 +8,7 @@ import androidx.room.withTransaction
 import com.example.gamehub.data.local.AppDatabase
 import com.example.gamehub.data.local.GameEntity
 import com.example.gamehub.data.local.RemoteKeysEntity
-import com.example.gamehub.data.remote.GameDto
+import com.example.gamehub.data.mapper.toEntity
 import com.example.gamehub.data.remote.RawgApi
 import retrofit2.HttpException
 import java.io.IOException
@@ -63,5 +63,3 @@ class TopRatedRemoteMediator(
     }
 }
 
-private fun GameDto.toEntity(): GameEntity =
-    GameEntity(id, name, backgroundImage, rating, released, System.currentTimeMillis())
